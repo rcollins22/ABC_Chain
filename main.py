@@ -42,15 +42,17 @@ class Mychain:
     
     ##THIS FUNCTION CONNECTS THE CURRENT BLOCK TO THE NEXT ONE, SOLIDIFYING CHAIN ENCRYPTION##
     def link(self,block):
-        block.prev_block=self.block.c()
-        block.block_id= self.block.block_id += 1
-        self.block.next_block=block
+        block.prev_block=self.block.c() ##PREV. BLOCK SET TO CURRENT BLOCK##
+        block.block_id= self.block.block_id += 1 ##CHANGE THE ID TO THE NEXT BLOCK##
+        self.block.next_block=block 
         self.block= self.block.next_block
     
     ##THIS FUNCTION WILL ACT AS THE MINING FEATURE##
     def mining(self,block):
         for x in range(self.chain_dif):
-            if int(block.c())>
+            if int(block.c(),16) <=self.chain_dif:
+
+
 
  
 

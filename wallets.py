@@ -8,7 +8,7 @@ class Wallets():
         self.name=name
     ##FOW NOW TRANSACTION IS NESTED IN CLASS. WILL HAVE OWN FUNCTION##    
     def encrypt_trans(self):
-        signature = hashlib.sha256(self.hash_string.encode()).hexdigest()
+        signature = hashlib.sha256(self.name.encode()).hexdigest()
         return signature
     def retun(self):
         encrypt_trans()
@@ -22,5 +22,5 @@ wallet3=Wallets('Sean')
 wallet4=Wallets('Satoshi')
 wallet5=Wallets('Adnan')
 wallet6=Wallets('Bob')
-#import_code=my_wallet.encrypt_trans()
-#print(import_code)
+import_code=wallet1.encrypt_trans()
+print(import_code)
