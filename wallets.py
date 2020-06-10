@@ -4,8 +4,8 @@ import datetime
 
 class Wallets():
 
-    def __init__(self,balance=10):
-        self.hash_string=hash_string
+    def __init__(self,name,balance=10):
+        self.name=name
         
     def encrypt_trans(self):
         signature = hashlib.sha256(self.hash_string.encode()).hexdigest()
@@ -16,11 +16,11 @@ class Wallets():
 
 
 
-1wallet=Wallets('Clint')
-2wallet=Wallets('Rashad')
-3wallet=Wallets('Sean')
-4wallet=Wallets('Satoshi')
-5wallet=Wallets('Adnan')
-6wallet=Wallets('Bob')
+wallet1 = Wallets('Clint')
+wallet2=Wallets('Rashad')
+wallet3=Wallets('Sean')
+wallet4=Wallets('Satoshi')
+wallet5=Wallets('Adnan')
+wallet6=Wallets('Bob')
 #import_code=my_wallet.encrypt_trans()
 #print(import_code)
