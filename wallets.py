@@ -3,10 +3,10 @@ import datetime
 
 
 class Wallets():
-
+    ##PULLS 'name' STRING FROM 'wallet#' VARIABLE TO CREATE UNIQUE WALLET TRANSACTION##
     def __init__(self,name,balance=10):
         self.name=name
-        
+    ##FOW NOW TRANSACTION IS NESTED IN CLASS. WILL HAVE OWN FUNCTION##    
     def encrypt_trans(self):
         signature = hashlib.sha256(self.hash_string.encode()).hexdigest()
         return signature
