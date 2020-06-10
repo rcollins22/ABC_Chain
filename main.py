@@ -31,8 +31,10 @@ class Block:
 
 
 class Mychain:
-    dif_var = 10
+    ##THIS FUNCTION HANDLES THE THE VALIDATION OF A TRANSACTION##
+    dif_var = 10      ##ALLOWS US TO ADJUST THE DIFFICULTY OF SOLVING THE HASH##
     max_idx = 2**32
+    ##BY LOWERING THE 'dif_var' WE ARE GIVING THE COMPUTER LESS ROOM TO CALC CORRECT HASH###
     chain_dif= 2**(256-dif_var)
     ##CREATES THE STARTING BLOCK OR 'GENESIS' BLOCK##
     block=Block('first')
@@ -45,7 +47,10 @@ class Mychain:
         self.block.next_block=block
         self.block= self.block.next_block
     
-    def mining(self, )
+    ##THIS FUNCTION WILL ACT AS THE MINING FEATURE##
+    def mining(self,block):
+        for x in range(self.chain_dif):
+            if int(block.c())>
 
  
 
