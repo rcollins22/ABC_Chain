@@ -2,58 +2,40 @@ import hashlib
 import datetime
 
 
-tx_amt= float(input('Input amount\:n'))
+
+tx_amt= input('Input amount\:n')
 class Wallets():
     ##PULLS 'name' STRING FROM 'wallet#' VARIABLE TO CREATE UNIQUE WALLET TRANSACTION##
     def __init__(self,name,balance):
-        self.tx_amt=2
+        self.tx_amt=tx_amt
         #tx_amt= int(input('Input amount\:n'))
         self.name=name
         self.balance=balance
-        #print(self.balance)
-    # my_bal=balance
-    # print(my_bal)
-    recip  = input('Who are you Sending to?\n')
-
-    
-    # print(wallet1)
-    ##FOR NOW TRANSACTION IS NESTED IN CLASS. WILL HAVE OWN FUNCTION##    
+  
+    ##THIS FUNCTION WILL CONFIRM THE EXCHANGE BETWEEN WALLETS AND BLOCKCHAIN##    
     def encrypt_trans(self):
-        #print(wallet1)
+        self.recip  = input('Who are you Sending to?\n')
         ha= hashlib.sha256()
         ha.update(
         str(self.tx_amt).encode() +
         str(self.balance).encode() +
         str(self.recip).encode())
         self.trans_id=ha.hexdigest()
-
         print('Your Transaction is being confirmed!\n\nTransaction ID: {}'.format(self.trans_id))
-
-    def cond_trans(self):
-        while confirmed != True:
-            if self.recip == 'Clint' or 'clint':
-                self.balance -= self.tx_amt
-                wallet1.balance += self.tx_amt
-                print(wallet1.balance)
-
-    cond_trans()
-            
-
-    def retun(self):
-        signature=self.encrypt_trans()
-        print(signature)
-    
-
-
-
+        from main import ABCchain
+        print(self.tx_amt)     
+        if self.recip == 'Clint' or 'clint':
+            self.balance -= int(self.tx_amt)
+            wallet1.balance += int(self.tx_amt)
+            print(wallet1.balance)
 
 
 wallet1 = Wallets('Clint',10)
-wallet2=Wallets('Floyd',10)
-wallet3=Wallets('Sean',10)
 mywall=Wallets('User',10)
-wallet1.retun()
 
+mywall.encrypt_trans()
+mywall.encrypt_trans()
+mywall.encrypt_trans()
 
 #def transaction():
 

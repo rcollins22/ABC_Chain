@@ -33,7 +33,7 @@ class Block:
 
 class ABCchain:
         ##THIS FUNCTION HANDLES THE THE VALIDATION OF A TRANSACTION##
-    diff = 20      ##ALLOWS US TO ADJUST THE DIFFICULTY OF SOLVING THE HASH##
+    diff = 22      ##ALLOWS US TO ADJUST THE DIFFICULTY OF SOLVING THE HASH##
     max_idx = 2**32
     target = 2 ** (256-diff)
     ##CREATES THE STARTING BLOCK OR 'GENESIS' BLOCK##
@@ -59,6 +59,7 @@ class ABCchain:
                 break
             else:
                 block.idx += 1
+success = True
 
 ABCchain = ABCchain()
 
