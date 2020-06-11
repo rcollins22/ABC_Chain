@@ -1,9 +1,11 @@
 import datetime
 import hashlib
+# from wallets import Wallets
+
 
 class Block:
     block_id = 0
-    trx = 'ddmdkvf4545m45m4kd4krm5km567476nb8'
+    bkht = ''
     next = None
     hash = None
     idx = 0
@@ -11,15 +13,15 @@ class Block:
     timestamp = datetime.datetime.now()
 
     ##INITIALIZES THE INFO FROM THE TRANSACTION##
-    def __init__(self, trx):
-        self.trx = trx
+    def __init__(self, bkht):
+        self.bkht = bkht      ##BLOCK HEIGHT##
 
     def hash(self):
         h = hashlib.sha256()
         ##ADD NUMEROUS VARIABLES BELOW FROM PREVIOUS BLOCK TO DEEPEN CHAIN ECRYPTION##
         h.update(
         str(self.idx).encode() +
-        str(self.trx).encode() +
+        str(self.bkht).encode() +
         str(self.previous_hash).encode() +
         str(self.timestamp).encode() +
         str(self.block_id).encode())
@@ -27,7 +29,7 @@ class Block:
         return h.hexdigest()
 
     def __str__(self):
-        return "Block Hash: " + str(self.hash()) + "\nBlockNo: " + str(self.block_id) + "\nBlock Data: " + str(self.trx) + "\nHashes: " + str(self.idx) + "\n--------------"
+        return "Block Hash: " + str(self.hash()) + "\nBlockNo: " + str(self.block_id) + "\nBlock Data: " + str(self.bkht) + "\nHashes: " + str(self.idx) + "\n--------------"
 
 class ABCchain:
         ##THIS FUNCTION HANDLES THE THE VALIDATION OF A TRANSACTION##
@@ -64,5 +66,5 @@ for n in range(1):
     ABCchain.mining(Block("Block " + str(n+1)))
 
 while ABCchain.head != None:
-    print(ABCchain.head)
+    #print(ABCchain.head)
     ABCchain.head = ABCchain.head.next
