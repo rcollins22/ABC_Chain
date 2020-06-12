@@ -3,6 +3,7 @@ import datetime
 
 
 
+
 tx_amt= input('Input amount\:n')
 class Wallets():
     ##PULLS 'name' STRING FROM 'wallet#' VARIABLE TO CREATE UNIQUE WALLET TRANSACTION##
@@ -18,25 +19,26 @@ class Wallets():
         ha= hashlib.sha256()
         ha.update(
         str(self.tx_amt).encode() +
-        str(self.balance).encode() +
+        str(self.balance).encode() + 
+        str(self.)
         str(self.recip).encode())
         self.trans_id=ha.hexdigest()
-        print('Your Transaction is being confirmed!\n\nTransaction ID: {}'.format(self.trans_id))
-        from main import ABCchain
-        print(self.tx_amt)     
-        if self.recip == 'Clint' or 'clint':
-            self.balance -= int(self.tx_amt)
-            wallet1.balance += int(self.tx_amt)
-            print(wallet1.balance)
+        while True:
+            from main import Block
+            from main import ABCchain
+            print('Your Transaction is being confirmed!\n\nTransaction ID: {}'.format(self.trans_id))
+            break
+            print(self.tx_amt)     
+            if self.recip == 'Clint' or 'clint':
+                self.balance -= int(self.tx_amt)
+                wallet1.balance += int(self.tx_amt)
+                print(wallet1.balance)
 
 
 wallet1 = Wallets('Clint',10)
 mywall=Wallets('User',10)
 
 mywall.encrypt_trans()
-mywall.encrypt_trans()
-mywall.encrypt_trans()
-
 #def transaction():
 
 
