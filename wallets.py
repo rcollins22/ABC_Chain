@@ -4,7 +4,7 @@ import datetime
 
 
 
-tx_amt= input('Input amount\:n')
+tx_amt= input('How much ABC coin would you like to send?\n')
 class Wallets():
     ##PULLS 'name' STRING FROM 'wallet#' VARIABLE TO CREATE UNIQUE WALLET TRANSACTION##
     def __init__(self,name,balance):
@@ -15,12 +15,11 @@ class Wallets():
   
     ##THIS FUNCTION WILL CONFIRM THE EXCHANGE BETWEEN WALLETS AND BLOCKCHAIN##    
     def encrypt_trans(self):
-        self.recip  = input('Who are you Sending to?\n')
+        self.recip  = input('Where would you like to send you ABC coin?\n')
         ha= hashlib.sha256()
         ha.update(
         str(self.tx_amt).encode() +
         str(self.balance).encode() + 
-        str(self.)
         str(self.recip).encode())
         self.trans_id=ha.hexdigest()
         while True:

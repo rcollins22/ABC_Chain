@@ -26,16 +26,16 @@ class Block:
         str(self.timestamp).encode() +
         str(self.block_id).encode())
         ##RETURNS THE ENCRYPTED HASH CODE##
-        #h.hexdigest()=trans_id
-        print(str(h.hexdigest()))
+        #print(str(h.hexdigest()))
         return h.hexdigest()
+    
 
     def __str__(self):
         return "Block Hash: " + str(self.hash()) + "\nBlockNo: " + str(self.block_id) + "\nBlock Data: " + str(self.bkht) + "\nHashes: " + str(self.idx) + "\n--------------"
 
 class ABCchain:
         ##THIS FUNCTION HANDLES THE THE VALIDATION OF A TRANSACTION##
-    diff = 15      ##ALLOWS US TO ADJUST THE DIFFICULTY OF SOLVING THE HASH##
+    diff = 19      ##ALLOWS US TO ADJUST THE DIFFICULTY OF SOLVING THE HASH##
     max_idx = 2**32
     target = 2 ** (256-diff)
     ##CREATES THE STARTING BLOCK OR 'GENESIS' BLOCK##
@@ -65,7 +65,7 @@ success = True
 
 ABCchain = ABCchain()
 
-for n in range():
+for n in range(5):
     ABCchain.mining(Block("Block " + str(n+1)))
 
 while ABCchain.head != None:
